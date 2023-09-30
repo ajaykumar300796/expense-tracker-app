@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import ExpenseItem from './components/expenseItem/ExpenseItem';
 import Expenses from './components/expenses/Expenses';
+import NewExpense from './components/newExpense/NewExpense';
 
 function App() {
   const expenses: any[] = [
@@ -27,7 +28,10 @@ function App() {
   ];
 
   return (
-    <Expenses items={expenses} />
+    <div>
+      <NewExpense />
+      <Expenses items={expenses} />
+    </div>
   );
 }
 
