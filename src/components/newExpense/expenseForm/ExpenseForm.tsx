@@ -14,7 +14,7 @@ export default function ExpenseForm(props: any) {
         // console.log(event.target.value);
         setEnteredAmount(event.target.value);
     }
-    const dateChangeHandler = (event: any) => {
+    const dateChangeHandler = (event: any) => {   
         // console.log(event.target.value);
         setEnteredDate(event.target.value);
     }
