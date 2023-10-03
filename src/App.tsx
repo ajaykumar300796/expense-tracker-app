@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ExpenseItem from './components/expenseItem/ExpenseItem';
+import ExpenseItem from './components/expenses/expenseItem/ExpenseItem';
 import Expenses from './components/expenses/Expenses';
 import NewExpense from './components/newExpense/NewExpense';
 
