@@ -24,10 +24,28 @@ export default function Expenses(props: any) {
         // console.log("filterData ==>> ", filterData);
     }
     return (
-        <Card className="expenses">
-            <ExpensesFilter selectedYear={filteredData} onChangeExpenseFilterData={changeExpenseFilterData} />
-            <p>Data for years {filteredYearInfo} are hidden.</p>
-            <ExpenseItem title={props.items[0].title} amount={props.items[0].amount} date={props.items[0].date}> </ExpenseItem>
-        </Card>
+        <div>
+            <Card className="expenses">
+                <ExpensesFilter
+                    selectedYear={filteredData}
+                    onChangeExpenseFilterData={changeExpenseFilterData}
+                />
+                <p>Data for years {filteredYearInfo} are hidden.</p>
+                {props.items.map((expense: any) => (
+                    <ExpenseItem
+                        key={expense.id}
+                        title={expense.title}
+                        amount={expense.amount}
+                        date={expense.date}
+                    ></ExpenseItem>
+                ))}
+                {/* {<ExpenseItem
+                title={props.items[0].title}
+                amount={props.items[0].amount}
+                date={props.items[0].date}>
+            </ExpenseItem>} */}
+            </Card>
+        </div>
+
     )
 }
