@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import ExpenseItem from './components/expenses/expenseItem/ExpenseItem';
 import Expenses from './components/expenses/Expenses';
 import NewExpense from './components/newExpense/NewExpense';
 
@@ -27,12 +26,12 @@ const DUMMY_EXPENSES: any[] = [
 ];
 
 const App = () => {
-  
+
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
-  
+
   const addNewExpense = (newExpense: any) => {
     console.log("newExpense on app.js ==>> ", newExpense);
-    setExpenses((prevExpenses) => { 
+    setExpenses((prevExpenses) => {
       return [newExpense, ...prevExpenses]
     });
     // setExpenses([newExpense, ...expenses]);
@@ -40,7 +39,7 @@ const App = () => {
 
   return (
     <div>
-      <NewExpense onAddNewExpense= {addNewExpense}/>
+      <NewExpense onAddNewExpense={addNewExpense} />
       <Expenses items={expenses} />
     </div>
   );
