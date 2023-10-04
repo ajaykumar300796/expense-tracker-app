@@ -21,8 +21,12 @@ export default function Expenses(props: any) {
 
     const changeExpenseFilterData = (filterData: any) => {
         setFilteredData(filterData);
-        // console.log("filterData ==>> ", filterData);
+        console.log("filterData ==>> ", filterData);
     }
+
+    const filteredExpenses = props.items.filter((expense: any) => {
+        return expense.date.getFullYear().toString() === filteredData;
+    })
     return (
         <div>
             <Card className="expenses">
@@ -31,7 +35,7 @@ export default function Expenses(props: any) {
                     onChangeExpenseFilterData={changeExpenseFilterData}
                 />
                 <p>Data for years {filteredYearInfo} are hidden.</p>
-                {props.items.map((expense: any) => (
+                {filteredExpenses.map((expense: any) => (
                     <ExpenseItem
                         key={expense.id}
                         title={expense.title}
