@@ -12,13 +12,16 @@ export default function ExpenseItem(props: any) {
         console.log("title 2 ==>> ", title);
     }
     return (
-        <Card className="expense-item">
-            <ExpenseDate date={props.date} />
-            <div className="expense-item__description">
-                <h2>{title}</h2>
-                <div className="expense-item__price">{props.amount}</div>
-                <button onClick={clickHandler}>Change title</button>
-            </div>
-        </Card>
+        <li>
+            <Card className="expense-item">
+                <ExpenseDate date={props.date} />
+                <div className="expense-item__description">
+                    <h2>{title}</h2>
+                    <div className="expense-item__price">{props.amount}</div>
+                    <button onClick={clickHandler}>Change title</button>
+                </div>
+            </Card>
+        </li>
+
     )
 }
