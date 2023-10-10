@@ -8,7 +8,7 @@ export default function ExpenseForm(props: any) {
     const titleChangeHandler = (event: any) => {
         // console.log(event.target.value);
         setEnteredTitle(event.target.value);
-        console.log("enteredTitle ==>> ", enteredTitle);
+        // console.log("enteredTitle ==>> ", enteredTitle);
     }
     const amountChangeHandler = (event: any) => {
         // console.log(event.target.value);
@@ -23,7 +23,7 @@ export default function ExpenseForm(props: any) {
         event.preventDefault();
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         }
         console.log("expenseData submitted ==>> ", expenseData);
@@ -32,6 +32,7 @@ export default function ExpenseForm(props: any) {
         setEnteredAmount('');
         setEnteredDate('');
     }
+
     return (
         <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
@@ -49,6 +50,7 @@ export default function ExpenseForm(props: any) {
                 </div>
             </div>
             <div className="new-expense__actions">
+                <button type='button' onClick={props.onCancel}>Cancel</button>
                 <button type='submit'>Add Expense</button>
             </div>
         </form>
